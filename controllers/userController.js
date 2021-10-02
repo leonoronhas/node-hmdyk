@@ -4,6 +4,10 @@ const User = require('../models/user');
  * Create User
  * @author Leonardo Santos <dev.leo.santos@gmail.com>
  * @description Creates a new user
+ * @description HTTP Method: POST
+ * @description HTTP Request type: Body
+ * @description Path: /user/add-user
+ * @description Content-Type: application/json
  *
  * @async
  *
@@ -11,6 +15,8 @@ const User = require('../models/user');
  * @property {String} last_name User's last name
  * @property {String} email User's email
  * @property {String} occupation User's occupation
+ * 
+ * @returns {JSON}
  */
 const addUser = async (req, res) => {
   try {
