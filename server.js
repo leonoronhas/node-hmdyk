@@ -1,4 +1,5 @@
 const express = require('express');
+const path = require('path');
 const mongoose = require('mongoose');
 const logger = require('morgan');
 const cors = require('cors');
@@ -40,6 +41,11 @@ app.use((req, res, next) => {
 });
 
 app.use('/', defaultRoute);
+
+app.use(express.static(path.join(__dirname, 'docs')));
+app.get('/', function (req, res) {
+  res.render('./docs/index.html');
+});
 
 mongoose
   .connect(process.env.MONGODB_URL, {

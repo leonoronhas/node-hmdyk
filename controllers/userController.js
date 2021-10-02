@@ -1,5 +1,17 @@
 const User = require('../models/user');
 
+/**
+ * Create User
+ * @author Leonardo Santos <dev.leo.santos@gmail.com>
+ * @description Creates a new user
+ *
+ * @async
+ *
+ * @property {String} first_name User's first name
+ * @property {String} last_name User's last name
+ * @property {String} email User's email
+ * @property {String} occupation User's occupation
+ */
 const addUser = async (req, res) => {
   try {
     const user = new User(req.body);
